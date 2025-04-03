@@ -6,7 +6,7 @@
 <body>
   <ul>
     {% for file in files %}
-      <li>{{ file }}</li>
+      <li><a href="{{ url_for('file_content', filename=file) }}">{{ file }}</a></li>
     {% endfor %}
   </ul>
 </body>
