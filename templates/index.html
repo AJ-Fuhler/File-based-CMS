@@ -4,6 +4,9 @@
   <title>File List</title>
 </head>
 <body>
+  {% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+  {% endfor %}
   <ul>
     {% for file in files %}
       <li><a href="{{ url_for('file_content', filename=file) }}">{{ file }}</a></li>
