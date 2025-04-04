@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
   <title>File List</title>
@@ -9,7 +10,11 @@
   {% endfor %}
   <ul>
     {% for file in files %}
-      <li><a href="{{ url_for('file_content', filename=file) }}">{{ file }}</a></li>
+      <li>
+        <a href="{{ url_for('file_content', filename=file) }}">{{ file }}</a>
+        <a href="{{ url_for('edit_file', filename=file) }}">Edit</a>
+      </li>
     {% endfor %}
   </ul>
 </body>
+</html>
