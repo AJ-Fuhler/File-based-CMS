@@ -21,7 +21,6 @@ class CMSTest(unittest.TestCase):
         self.create_document("about.md")
         self.create_document("changes.txt")
 
-
         response = self.client.get("/")
 
         self.assertEqual(200, response.status_code)
@@ -32,7 +31,6 @@ class CMSTest(unittest.TestCase):
     
     def test_file_content(self):
         self.create_document("changes.txt", "There are many changes.")
-
 
         with self.client.get("/changes.txt") as response:
             self.assertEqual(200, response.status_code)

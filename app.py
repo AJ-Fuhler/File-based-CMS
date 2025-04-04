@@ -32,7 +32,7 @@ def file_content(filename):
         if filename.endswith('.md'):
             with open(file_path, 'r') as file:
                 content = file.read()
-            return markdown(content)
+            return render_template('markdown.html', content=markdown(content))
         else:
             return send_from_directory(data_dir, filename)
     else:
